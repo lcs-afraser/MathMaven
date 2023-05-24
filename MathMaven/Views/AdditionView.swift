@@ -25,7 +25,7 @@ struct AdditionView: View {
     @State var answerCorrect = false
     
     // MARK: Computed properties
-
+    
     // The correct response
     var correctResponse: Int {
         return firstValue + secondValue
@@ -52,10 +52,10 @@ struct AdditionView: View {
                 Divider()
             }
             .padding(.horizontal)
-
+            
             // 2. Accept answer
             HStack {
-
+                
                 ZStack {
                     
                     // Only show this when the answer was found to be correct
@@ -75,23 +75,24 @@ struct AdditionView: View {
                 
                 TextField("",
                           text: $input)
-                    .multilineTextAlignment(.trailing)
+                .multilineTextAlignment(.trailing)
             }
             .padding(.horizontal)
-
-            // 3. Check answer
-            //    Only show button when answer has not already been checked
-            if answerChecked == false {
-                
-                CheckAnswerButtonView(input: input,
-                                      correctResponse: correctResponse,
-                                      answerChecked: $answerChecked,
-                                      answerCorrect: $answerCorrect)
-
-            } else {
-                
-                // 4. Generate new question
-                // Only show this once an answer has been provided
+        }
+        // 3. Check answer
+        //    Only show button when answer has not already been checked
+        if answerChecked == false {
+            
+            CheckAnswerButtonView(input: input,
+                                  correctResponse: correctResponse,
+                                  answerChecked: $answerChecked,
+                                  answerCorrect: $answerCorrect)
+            
+        } else {
+            
+            // 4. Generate new question
+            // Only show this once an answer has been provided
+            VStack{
                 Button(action: {
                     generateNewQuestion()
                 }, label: {
@@ -101,14 +102,38 @@ struct AdditionView: View {
                 .padding()
                 .buttonStyle(.bordered)
                 
-            }
-            
-            // Push interface up to top of screen
-            Spacer()
+                if answerCorrect == true {
+                    Text("Great Job!")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.green)
 
+                    List(favourites) { favourite in
+
+                        NavigationLink(destination: {
+                            LottieView(animationNamed: favourite.fileName)
+                        }, label: {
+                            
+                        })
+
+                    }
+                }
+                else {
+                    Text("Nice Try!")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.red)
+                }
+                // Push interface up to top of screen
+                Spacer()
+                
+            }
+            .font(Font.custom("SF Pro", size: 64))
         }
-        .font(Font.custom("SF Pro", size: 64))
+        
+        
     }
+    
     
     // MARK: Functions
     
@@ -118,15 +143,16 @@ struct AdditionView: View {
         // Generate a new question
         firstValue = Int.random(in: 1...72)
         secondValue = Int.random(in: 1...72)
-
+        
         // Reset properties that track what's happening with the current question
         answerChecked = false
         answerCorrect = false
         
         // Reset the input field
         input = ""
-
+        
     }
+    
 }
 
 struct AdditionView_Previews: PreviewProvider {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E55D5042A1E594E00751B16 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6E55D5032A1E594E00751B16 /* Lottie */; };
+		6E55D5062A1E596200751B16 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55D5052A1E596200751B16 /* Animation.swift */; };
+		6E55D5092A1E5AA800751B16 /* 123026-celebrations-begin.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E55D5082A1E5AA800751B16 /* 123026-celebrations-begin.json */; };
+		6E55D50B2A1E5C0600751B16 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55D50A2A1E5C0600751B16 /* LottieView.swift */; };
 		814858F92A1E28DE00A7315E /* MathMavenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814858F82A1E28DE00A7315E /* MathMavenApp.swift */; };
 		814858FD2A1E28DF00A7315E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814858FC2A1E28DF00A7315E /* Assets.xcassets */; };
 		814859002A1E28DF00A7315E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814858FF2A1E28DF00A7315E /* Preview Assets.xcassets */; };
@@ -19,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E55D5052A1E596200751B16 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		6E55D5082A1E5AA800751B16 /* 123026-celebrations-begin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "123026-celebrations-begin.json"; sourceTree = "<group>"; };
+		6E55D50A2A1E5C0600751B16 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		814858F52A1E28DE00A7315E /* MathMaven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathMaven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814858F82A1E28DE00A7315E /* MathMavenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMavenApp.swift; sourceTree = "<group>"; };
 		814858FC2A1E28DF00A7315E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,12 +43,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E55D5042A1E594E00751B16 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E55D5072A1E5A6000751B16 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				6E55D5082A1E5AA800751B16 /* 123026-celebrations-begin.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		814858EC2A1E28DE00A7315E = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				814858F82A1E28DE00A7315E /* MathMavenApp.swift */,
+				6E55D5072A1E5A6000751B16 /* Animations */,
 				814859102A1E2A4500A7315E /* Model */,
 				814859062A1E292A00A7315E /* Views */,
 				814858FC2A1E28DF00A7315E /* Assets.xcassets */,
@@ -94,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				814859112A1E2A5900A7315E /* Operation.swift */,
+				6E55D5052A1E596200751B16 /* Animation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				814859152A1E360D00A7315E /* CheckAnswerButtonView.swift */,
+				6E55D50A2A1E5C0600751B16 /* LottieView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -122,6 +141,9 @@
 			dependencies = (
 			);
 			name = MathMaven;
+			packageProductDependencies = (
+				6E55D5032A1E594E00751B16 /* Lottie */,
+			);
 			productName = MathMaven;
 			productReference = 814858F52A1E28DE00A7315E /* MathMaven.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +172,9 @@
 				Base,
 			);
 			mainGroup = 814858EC2A1E28DE00A7315E;
+			packageReferences = (
+				6E55D5022A1E594E00751B16 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 814858F62A1E28DE00A7315E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,6 +191,7 @@
 			files = (
 				814859002A1E28DF00A7315E /* Preview Assets.xcassets in Resources */,
 				814858FD2A1E28DF00A7315E /* Assets.xcassets in Resources */,
+				6E55D5092A1E5AA800751B16 /* 123026-celebrations-begin.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +204,8 @@
 			files = (
 				8148590D2A1E296E00A7315E /* MultiplicationView.swift in Sources */,
 				814859082A1E293C00A7315E /* AdditionView.swift in Sources */,
+				6E55D50B2A1E5C0600751B16 /* LottieView.swift in Sources */,
+				6E55D5062A1E596200751B16 /* Animation.swift in Sources */,
 				814858F92A1E28DE00A7315E /* MathMavenApp.swift in Sources */,
 				8148590A2A1E294A00A7315E /* SubtractionView.swift in Sources */,
 				8148590F2A1E298300A7315E /* DivisionView.swift in Sources */,
@@ -383,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E55D5022A1E594E00751B16 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E55D5032A1E594E00751B16 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E55D5022A1E594E00751B16 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 814858ED2A1E28DE00A7315E /* Project object */;
 }
